@@ -210,6 +210,9 @@ h6 {
   #hero {
     padding: 50px;
   }
+   .arrow {
+    padding-bottom: 50px;
+  }
 
   .title {
     font-size: 2rem;
