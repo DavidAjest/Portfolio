@@ -206,12 +206,12 @@ h6 {
   color: teal;
 }
 
+.arrow {
+  margin-bottom: 50px;
+}
 @media (max-width: 720px) {
   #hero {
     padding: 50px;
-  }
-   .arrow {
-    padding-bottom: 50px;
   }
 
   .title {
@@ -230,5 +230,8 @@ h6 {
   }
   .centered-section img {
     margin-bottom: 50px;
+  }
+  .arrow {
+    padding-bottom: 50px;
   }
 }
