@@ -119,7 +119,12 @@ h6 {
   flex-direction: column;
   text-decoration: none;
   color: inherit;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Add this line */
+  padding: 20px;
+  border-radius: 12px;
 }
+
 
 .card-image {
   position: relative;
