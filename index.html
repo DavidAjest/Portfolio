@@ -72,7 +72,7 @@
         </div>
 
         <div class="insights-flex">
-          <a class="insight-card" href="https://yelpcamp-6ubt.onrender.com/">
+          <a class="insight-card js-tilt" href="https://yelpcamp-6ubt.onrender.com/">
             <div class="card-image">
               <img src="public/images/campground_4.png" alt="Project Image" />
               <span class="badge">Live On Render</span>
@@ -91,7 +91,7 @@
           </a>
           <!-- Additional cards can be added here -->
           <a
-            class="insight-card"
+            class="insight-card js-tilt"
             href="https://github.com/DavidAjest/spotify-clone"
           >
             <div class="card-image">
@@ -110,7 +110,7 @@
             </div>
           </a>
           <a
-            class="insight-card"
+            class="insight-card js-tilt"
             href="https://github.com/DavidAjest/College-Project-PlantState-rep"
           >
             <div class="card-image">
@@ -133,7 +133,7 @@
             </div>
           </a>
           <a
-            class="insight-card"
+            class="insight-card js-tilt"
             href="https://github.com/DavidAjest/ecommerce/tree/main/frontend"
           >
             <div class="card-image">
@@ -184,6 +184,8 @@
           );
         });
 
+        
+
         const lenis = new Lenis();
         lenis.on("scroll", ScrollTrigger.update);
 
@@ -192,6 +194,65 @@
           requestAnimationFrame(raf);
         }
         requestAnimationFrame(raf);
+      });
+    </script>
+
+    <script>
+      function initScrollReveal(targetElements, defaultProps) {
+        if (!targetElements.length) return;
+
+        ScrollReveal({ reset: false });
+
+        targetElements.forEach(function ({ element, animation }) {
+          ScrollReveal().reveal(
+            element,
+            Object.assign({}, defaultProps, animation)
+          );
+        });
+      }
+
+      // Example usage:
+      document.addEventListener("DOMContentLoaded", function () {
+        const elements = [
+          {
+            element: ".title",
+            animation: { delay: 200, distance: "50px", origin: "top" },
+          },
+          {
+            element: ".what-built",
+            animation: { delay: 400, distance: "30px", origin: "bottom" },
+          },
+          {
+            element: ".insights-flex",
+            animation: {
+              delay: 600,
+              distance: "20px",
+              origin: "right",
+              interval: 100,
+            },
+          },
+        ];
+        // Convert selector strings to actual elements
+        const targets = elements
+          .map((item) => ({
+            element: document.querySelector(item.element),
+            animation: item.animation,
+          }))
+          .filter((item) => item.element);
+
+        initScrollReveal(targets, { duration: 800, easing: "ease-in-out" });
+      });
+    </script>
+    <script>
+      function initTiltAnimation() {
+        const elements = document.querySelectorAll(".js-tilt");
+        if (elements.length) {
+          VanillaTilt.init(elements);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        initTiltAnimation();
       });
     </script>
   </body>
